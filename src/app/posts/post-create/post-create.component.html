@@ -1,7 +1,15 @@
 <!-- property binding ( [value]="newPost" ) -->
 <!-- <textarea rows="6" [value]="newPost" #postInput></textarea> -->
+<mat-card>
+  <mat-form-field>
+    <input matInput type="text" [(ngModel)]="enteredTitle">
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput rows="6" [(ngModel)]="enteredContent"></textarea> <!-- [(ngModel)] is a two way binding feature -->
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="onAddPost()">Save Post</button> <!-- event binding -->
+</mat-card>
 
-<textarea rows="6" [(ngModel)]="enteredValue"></textarea> <!-- [(ngModel)] is a two way binding feature -->
-<hr>
-<button (click)="onAddPost()">Save Post</button> <!-- event binding -->
-<p>{{ newPost }}</p> <!-- {{ newPost }} is string interpolation -->
+<!-- <hr> -->
+<!-- {{ newPost }} is string interpolation -->
+<!-- <p>{{ newPost }}</p>  -->
