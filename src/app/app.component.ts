@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { Post } from './posts/post.model';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,12 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   // title = 'mean-course';
-  storedPosts: any[] = []
+  storedPosts: Post[] = []
 
-  onPostAdded(post: any) {
+  onPostAdded(post: Post) {
     this.storedPosts.push(post)
     // console.log(post)
     console.log(this.storedPosts)
-    // console.log(typeof(this.storedPosts[0]))
+    console.log(typeof(this.storedPosts[0]))
   }
 }
