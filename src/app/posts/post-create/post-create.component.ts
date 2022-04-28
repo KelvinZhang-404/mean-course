@@ -14,7 +14,7 @@ export class PostCreateComponent {
   enteredTitle = ''
   // postCreated = new EventEmitter<Post>()
 
-  constructor(public postsService: PostsService) {}
+  constructor(public postsService: PostsService) {} // this is the shortcut of writing property outside and initialise in constructor
   // newPost = 'No Content';
 
   onAddPost(form: NgForm) {
