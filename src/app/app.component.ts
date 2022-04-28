@@ -8,13 +8,13 @@ import { Post } from './posts/post.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  // title = 'mean-course';
-  storedPosts: Post[] = []
+  title = 'mean-course';
+  // storedPosts: Post[] = []
 
-  onPostAdded(post: Post) {
-    this.storedPosts.push(post)
-    // console.log(post)
-    console.log(this.storedPosts)
-    console.log(typeof(this.storedPosts[0]))
-  }
+  // onPostAdded(post: Post) {
+  //   this.storedPosts.push(post)
+  //   // console.log(post)
+  //   console.log(this.storedPosts)
+  //   console.log(typeof(this.storedPosts[0]))
+  // }
 }

@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Output } from "@angular/core";
+import { Component, EventEmitter } from "@angular/core";
 import { NgForm } from "@angular/forms";
 
-import { Post } from "../post.model";
+// import { Post } from "../post.model";
+import { PostsService } from "../posts.service";
 
 @Component({
   selector: 'app-post-create', // here the '-' after app is the conversion of '/', and should always do this conversion when specify the path
@@ -11,7 +12,9 @@ import { Post } from "../post.model";
 export class PostCreateComponent {
   enteredContent = ''
   enteredTitle = ''
-  @Output() postCreated = new EventEmitter<Post>()
+  // postCreated = new EventEmitter<Post>()
+
+  constructor(public postsService: PostsService) {}
   // newPost = 'No Content';
 
   onAddPost(form: NgForm) {
@@ -20,12 +23,12 @@ export class PostCreateComponent {
       return
     }
     // this.newPost = this.enteredValue;
-    const post: Post = {
-      title: form.value.title,
-      content: form.value.content
-    }
+    // const post: Post = {
+    //   title: form.value.title,
+    //   content: form.value.content
+    // }
     // console.log(post.title)
     // console.log(post.content)
-    this.postCreated.emit(post)
+    this.postsService.addPost(form.value.title, form.value.content);
   }
 }
